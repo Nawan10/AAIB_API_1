@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity FarmerFieldOwnerCropType.
+    -->
+    <changeSet id="20250502175613-1" author="jhipster">
+        <createTable tableName="farmer_field_owner_crop_type">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="crop" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="image" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="main_crop" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="crop_code" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="no_of_stages" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="description" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="crop_types_id" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="units_id" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="area" type="double">
+                <constraints nullable="true" />
+            </column>
+            <column name="sum_insured" type="double">
+                <constraints nullable="true" />
+            </column>
+            <column name="min_sum_insured" type="double">
+                <constraints nullable="true" />
+            </column>
+            <column name="max_sum_insured" type="double">
+                <constraints nullable="true" />
+            </column>
+            <column name="subsidised_premium_rate" type="double">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20250502175613-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/farmer_field_owner_crop_type.csv"
+                  separator=";"
+                  tableName="farmer_field_owner_crop_type"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="crop" type="string"/>
+            <column name="image" type="string"/>
+            <column name="main_crop" type="numeric"/>
+            <column name="crop_code" type="string"/>
+            <column name="no_of_stages" type="string"/>
+            <column name="description" type="string"/>
+            <column name="crop_types_id" type="numeric"/>
+            <column name="units_id" type="numeric"/>
+            <column name="area" type="numeric"/>
+            <column name="sum_insured" type="numeric"/>
+            <column name="min_sum_insured" type="numeric"/>
+            <column name="max_sum_insured" type="numeric"/>
+            <column name="subsidised_premium_rate" type="numeric"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

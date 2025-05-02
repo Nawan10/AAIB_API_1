@@ -1,0 +1,33 @@
+entity InsuranceCrop {
+    policyId String
+    yield Double
+    createdAt LocalDate
+    addedBy String
+}
+
+entity InsuranceCropCropType {
+    crop String
+    image String
+    mainCrop Integer
+    cropCode String
+    noOfStages String
+    description String
+    cropTypesId Integer
+    unitsId Integer
+    area Double
+    sumInsured Double
+    minSumInsured Double
+    maxSumInsured Double
+    subsidisedPremiumRate Double
+}
+
+/**
+ * Many to one relationship.
+ */
+relationship ManyToOne {
+    InsuranceCrop {crop} to InsuranceCropCropType
+}
+
+service * with serviceClass
+paginate * with pagination
+filter *

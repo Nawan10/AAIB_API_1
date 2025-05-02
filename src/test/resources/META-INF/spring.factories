@@ -1,0 +1,3 @@
+org.springframework.test.context.ContextCustomizerFactory = \
+    lk.geoedge.interoperability.config.\
+    SqlTestContainersSpringContextCustomizerFactory

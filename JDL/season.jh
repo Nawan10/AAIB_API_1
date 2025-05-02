@@ -1,0 +1,8 @@
+entity Season{
+    name String
+    period String
+}
+
+service * with serviceClass
+paginate * with pagination
+filter *

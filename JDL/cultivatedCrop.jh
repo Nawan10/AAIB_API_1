@@ -1,0 +1,53 @@
+entity CultivatedCrop {
+    cultivatedExtend Double
+    startDate LocalDate
+    endDate LocalDate
+    yield Double
+    unitId String
+    createdAt LocalDate
+    addedBy String
+}
+
+entity CultivatedCropCropType {
+    crop String
+    image String
+    mainCrop Integer
+    cropCode String
+    noOfStages String
+    description String
+    cropTypesId Integer
+    unitsId Integer
+    area Double
+    sumInsured Double
+    minSumInsured Double
+    maxSumInsured Double
+    subsidisedPremiumRate Double
+}
+
+entity CultivatedCropCultivatedLand {
+    landStatus String
+    urea Double
+    mop Double
+    tsp Double
+    createdAt LocalDate
+    addedBy String
+}
+
+entity CultivatedCropLandSeason {
+    name String
+    period String
+}
+
+
+/**
+ * Many to one relationship.
+ */
+relationship ManyToOne {
+    CultivatedCrop{cultivatedLand} to CultivatedCropCultivatedLand
+    CultivatedCrop{crop} to CultivatedCropCropType
+    CultivatedCropCultivatedLand {season} to CultivatedCropLandSeason
+}
+
+service * with serviceClass
+paginate * with pagination
+filter *

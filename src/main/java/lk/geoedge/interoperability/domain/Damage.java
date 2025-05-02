@@ -1,0 +1,218 @@
+package lk.geoedge.interoperability.domain;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.*;
+import java.io.Serializable;
+import java.time.LocalDate;
+
+/**
+ * A Damage.
+ */
+@Entity
+@Table(name = "damage")
+@SuppressWarnings("common-java:DuplicatedBlocks")
+public class Damage implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
+    @SequenceGenerator(name = "sequenceGenerator")
+    @Column(name = "id")
+    private Long id;
+
+    @Column(name = "damage_name")
+    private String damageName;
+
+    @Column(name = "damage_code")
+    private String damageCode;
+
+    @Column(name = "damage_family")
+    private String damageFamily;
+
+    @Column(name = "damage_genus")
+    private String damageGenus;
+
+    @Column(name = "damage_species")
+    private String damageSpecies;
+
+    @Column(name = "created_at")
+    private LocalDate createdAt;
+
+    @Column(name = "added_by")
+    private String addedBy;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JsonIgnoreProperties(value = { "damages" }, allowSetters = true)
+    private DamageCategory damageCategory;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JsonIgnoreProperties(value = { "damages" }, allowSetters = true)
+    private DamageType damageType;
+
+    // jhipster-needle-entity-add-field - JHipster will add fields here
+
+    public Long getId() {
+        return this.id;
+    }
+
+    public Damage id(Long id) {
+        this.setId(id);
+        return this;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getDamageName() {
+        return this.damageName;
+    }
+
+    public Damage damageName(String damageName) {
+        this.setDamageName(damageName);
+        return this;
+    }
+
+    public void setDamageName(String damageName) {
+        this.damageName = damageName;
+    }
+
+    public String getDamageCode() {
+        return this.damageCode;
+    }
+
+    public Damage damageCode(String damageCode) {
+        this.setDamageCode(damageCode);
+        return this;
+    }
+
+    public void setDamageCode(String damageCode) {
+        this.damageCode = damageCode;
+    }
+
+    public String getDamageFamily() {
+        return this.damageFamily;
+    }
+
+    public Damage damageFamily(String damageFamily) {
+        this.setDamageFamily(damageFamily);
+        return this;
+    }
+
+    public void setDamageFamily(String damageFamily) {
+        this.damageFamily = damageFamily;
+    }
+
+    public String getDamageGenus() {
+        return this.damageGenus;
+    }
+
+    public Damage damageGenus(String damageGenus) {
+        this.setDamageGenus(damageGenus);
+        return this;
+    }
+
+    public void setDamageGenus(String damageGenus) {
+        this.damageGenus = damageGenus;
+    }
+
+    public String getDamageSpecies() {
+        return this.damageSpecies;
+    }
+
+    public Damage damageSpecies(String damageSpecies) {
+        this.setDamageSpecies(damageSpecies);
+        return this;
+    }
+
+    public void setDamageSpecies(String damageSpecies) {
+        this.damageSpecies = damageSpecies;
+    }
+
+    public LocalDate getCreatedAt() {
+        return this.createdAt;
+    }
+
+    public Damage createdAt(LocalDate createdAt) {
+        this.setCreatedAt(createdAt);
+        return this;
+    }
+
+    public void setCreatedAt(LocalDate createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public String getAddedBy() {
+        return this.addedBy;
+    }
+
+    public Damage addedBy(String addedBy) {
+        this.setAddedBy(addedBy);
+        return this;
+    }
+
+    public void setAddedBy(String addedBy) {
+        this.addedBy = addedBy;
+    }
+
+    public DamageCategory getDamageCategory() {
+        return this.damageCategory;
+    }
+
+    public void setDamageCategory(DamageCategory damageCategory) {
+        this.damageCategory = damageCategory;
+    }
+
+    public Damage damageCategory(DamageCategory damageCategory) {
+        this.setDamageCategory(damageCategory);
+        return this;
+    }
+
+    public DamageType getDamageType() {
+        return this.damageType;
+    }
+
+    public void setDamageType(DamageType damageType) {
+        this.damageType = damageType;
+    }
+
+    public Damage damageType(DamageType damageType) {
+        this.setDamageType(damageType);
+        return this;
+    }
+
+    // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Damage)) {
+            return false;
+        }
+        return getId() != null && getId().equals(((Damage) o).getId());
+    }
+
+    @Override
+    public int hashCode() {
+        // see https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
+        return getClass().hashCode();
+    }
+
+    // prettier-ignore
+    @Override
+    public String toString() {
+        return "Damage{" +
+            "id=" + getId() +
+            ", damageName='" + getDamageName() + "'" +
+            ", damageCode='" + getDamageCode() + "'" +
+            ", damageFamily='" + getDamageFamily() + "'" +
+            ", damageGenus='" + getDamageGenus() + "'" +
+            ", damageSpecies='" + getDamageSpecies() + "'" +
+            ", createdAt='" + getCreatedAt() + "'" +
+            ", addedBy='" + getAddedBy() + "'" +
+            "}";
+    }
+}

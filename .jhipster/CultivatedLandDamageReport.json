@@ -1,0 +1,68 @@
+{
+  "annotations": {
+    "changelogDate": "20250502180255"
+  },
+  "applications": "*",
+  "clientRootFolder": "aaibapi1",
+  "databaseType": "sql",
+  "fields": [
+    {
+      "fieldName": "damageReasonId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "damageServerityId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "damageDateMonitor",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "farmerComment",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "estimatedYield",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "addedBy",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "aaibapi1",
+  "name": "CultivatedLandDamageReport",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "cropType",
+      "relationshipName": "crop",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "cultivatedLandDamageReportDamageCategory",
+      "relationshipName": "damageCategory",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "cultivatedLandDamageReportDamageType",
+      "relationshipName": "damageType",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

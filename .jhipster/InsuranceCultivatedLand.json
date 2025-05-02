@@ -1,0 +1,68 @@
+{
+  "annotations": {
+    "changelogDate": "20250502173958"
+  },
+  "applications": "*",
+  "clientRootFolder": "aaibapi1",
+  "databaseType": "sql",
+  "fields": [
+    {
+      "fieldName": "cropDurationId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "insurancePoliceId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sumInsuredPerAcre",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "insuranceExtent",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "sumAmount",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "insuranceStatus",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "addedBy",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "aaibapi1",
+  "name": "InsuranceCultivatedLand",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "farmer",
+      "relationshipName": "farmer",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "cultivatedLand",
+      "relationshipName": "cultivatedLand",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "insuranceCultivatedLandCropType",
+      "relationshipName": "crop",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

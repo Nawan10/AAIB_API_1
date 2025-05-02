@@ -1,0 +1,45 @@
+{
+  "annotations": {
+    "changelogDate": "20250502180001"
+  },
+  "applications": "*",
+  "clientRootFolder": "aaibapi1",
+  "databaseType": "sql",
+  "fields": [
+    {
+      "fieldName": "damageName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "damageCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "damageFamily",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "damageGenus",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "damageSpecies",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "addedBy",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "aaibapi1",
+  "name": "Damage",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

@@ -1,0 +1,38 @@
+{
+  "annotations": {
+    "changelogDate": "20250502175610"
+  },
+  "applications": "*",
+  "clientRootFolder": "aaibapi1",
+  "databaseType": "sql",
+  "fields": [
+    {
+      "fieldName": "createdAt",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "addedBy",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "aaibapi1",
+  "name": "FarmerFieldLandOwner",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "farmerFieldOwner",
+      "relationshipName": "farmerFieldOwner",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "farmerFieldLandOwnerFarmer",
+      "relationshipName": "farmer",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

@@ -1,0 +1,64 @@
+{
+  "annotations": {
+    "changelogDate": "20250502175612"
+  },
+  "applications": "*",
+  "clientRootFolder": "aaibapi1",
+  "databaseType": "sql",
+  "fields": [
+    {
+      "fieldName": "landPlotName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "landRegistryNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "totalLandExtent",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "calculatedArea",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "provinceId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "districtId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dsId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "gnId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "centerLat",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "centerLng",
+      "fieldType": "Double"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "aaibapi1",
+  "name": "FarmerFieldOwner",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "farmerFieldOwnerCropType",
+      "relationshipName": "crop",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

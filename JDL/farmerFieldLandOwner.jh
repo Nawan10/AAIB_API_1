@@ -1,0 +1,57 @@
+entity FarmerFieldLandOwner {
+    createdAt LocalDate
+    addedBy String
+}
+
+entity FarmerFieldLandOwnerFarmer {
+    farmerId String
+    farmerName String
+    nicNo String
+    addressFirstLine String
+    contactNoEmail String
+    provinceId Integer
+    districtId Integer
+    dsId Integer
+    gnId Integer
+    city String
+    addedDate Instant
+}
+
+entity FarmerFieldOwner {
+    landPlotName String
+    landRegistryNo String
+    totalLandExtent Double
+    calculatedArea Double
+    provinceId String
+    districtId String
+    dsId String
+    gnId String
+    centerLat Double
+    centerLng Double
+}
+
+entity FarmerFieldOwnerCropType {
+    crop String
+    image String
+    mainCrop Integer
+    cropCode String
+    noOfStages String
+    description String
+    cropTypesId Integer
+    unitsId Integer
+    area Double
+    sumInsured Double
+    minSumInsured Double
+    maxSumInsured Double
+    subsidisedPremiumRate Double
+}
+
+relationship ManyToOne {
+    FarmerFieldLandOwner {farmerFieldOwner} to FarmerFieldOwner
+    FarmerFieldLandOwner {farmer} to FarmerFieldLandOwnerFarmer
+    FarmerFieldOwner {crop} to FarmerFieldOwnerCropType
+}
+
+service * with serviceClass
+paginate * with pagination
+filter *

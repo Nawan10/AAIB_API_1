@@ -1,0 +1,28 @@
+{
+  "annotations": {
+    "changelogDate": "20250502180002"
+  },
+  "applications": "*",
+  "clientRootFolder": "aaibapi1",
+  "databaseType": "sql",
+  "fields": [
+    {
+      "fieldName": "categoryName",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "aaibapi1",
+  "name": "DamageCategory",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "damage",
+      "relationshipName": "damage",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

@@ -1,0 +1,29 @@
+entity Damage {
+    damageName String
+    damageCode String
+    damageFamily String
+    damageGenus String
+    damageSpecies String
+    createdAt LocalDate
+    addedBy String
+}
+
+entity DamageCategory{
+  categoryName String
+}
+
+entity DamageType{
+  typeName String
+}
+
+/**
+ * One to many relationship.
+ */
+relationship OneToMany {
+    DamageCategory{damage} to Damage
+    DamageType{damage} to Damage
+}
+
+service * with serviceClass
+paginate * with pagination
+filter *

@@ -1,0 +1,48 @@
+entity CultivatedLandDamageReport {
+    damageReasonId String
+    damageServerityId String
+    damageDateMonitor String
+    description String
+    farmerComment String
+    estimatedYield String
+    createdAt Instant
+    addedBy String
+}
+
+entity CropType {
+    crop String
+    image String
+    mainCrop Integer
+    cropCode String
+    noOfStages String
+    description String
+    cropTypesId Integer
+    unitsId Integer
+    area Double
+    sumInsured Double
+    minSumInsured Double
+    maxSumInsured Double
+    subsidisedPremiumRate Double
+}
+
+entity CultivatedLandDamageReportDamageCategory{
+    categoryName String
+}
+
+entity CultivatedLandDamageReportDamageType{
+  typeName String
+}
+
+
+/**
+ * Many to one relationship.
+ */
+relationship ManyToOne {
+    CultivatedLandDamageReport{crop} to CropType
+    CultivatedLandDamageReport{damageCategory} to CultivatedLandDamageReportDamageCategory
+    CultivatedLandDamageReport{damageType} to CultivatedLandDamageReportDamageType
+}
+
+service * with serviceClass
+paginate * with pagination
+filter *

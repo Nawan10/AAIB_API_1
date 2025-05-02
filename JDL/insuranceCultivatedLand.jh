@@ -1,0 +1,70 @@
+entity InsuranceCultivatedLand {
+    cropDurationId String
+    insurancePoliceId String
+    sumInsuredPerAcre Integer
+    insuranceExtent Integer
+    sumAmount Integer
+    insuranceStatus String
+    createdAt LocalDate
+    addedBy String
+}
+
+entity Farmer {
+    farmerId String
+    farmerName String
+    nicNo String
+    addressFirstLine String
+    contactNoEmail String
+    provinceId Integer
+    districtId Integer
+    dsId Integer
+    gnId Integer
+    city String
+    addedDate Instant
+}
+
+entity CultivatedLand {
+  landStatus String
+  urea Double
+  mop Double
+  tsp Double
+  createdAt LocalDate
+  addedBy String
+}
+
+// CropType
+entity InsuranceCultivatedLandCropType {
+    crop String
+    image String
+    mainCrop Integer
+    cropCode String
+    noOfStages String
+    description String
+    cropTypesId Integer
+    unitsId Integer
+    area Double
+    sumInsured Double
+    minSumInsured Double
+    maxSumInsured Double
+    subsidisedPremiumRate Double
+}
+
+//Season
+entity CultivatedLandSeason {
+    name String
+    period String
+}
+
+/**
+ * Many to one relationship.
+ */
+relationship ManyToOne {
+    InsuranceCultivatedLand {farmer } to Farmer
+    InsuranceCultivatedLand {cultivatedLand } to CultivatedLand
+    InsuranceCultivatedLand {crop} to InsuranceCultivatedLandCropType
+    CultivatedLand {season} to CultivatedLandSeason
+}
+
+service * with serviceClass
+paginate * with pagination
+filter *
