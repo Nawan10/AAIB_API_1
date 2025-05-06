@@ -1,0 +1,38 @@
+{
+  "annotations": {
+    "changelogDate": "20250504092451"
+  },
+  "applications": "*",
+  "clientRootFolder": "aaibapi1",
+  "databaseType": "sql",
+  "fields": [
+    {
+      "fieldName": "addedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "aaibapi1",
+  "name": "CropDamage",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "cropDamageCropType",
+      "relationshipName": "crop",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "cropDamageDamage",
+      "relationshipName": "damage",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

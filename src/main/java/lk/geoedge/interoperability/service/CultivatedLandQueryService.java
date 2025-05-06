@@ -75,6 +75,9 @@ public class CultivatedLandQueryService extends QueryService<CultivatedLand> {
                 buildRangeSpecification(criteria.getTsp(), CultivatedLand_.tsp),
                 buildRangeSpecification(criteria.getCreatedAt(), CultivatedLand_.createdAt),
                 buildStringSpecification(criteria.getAddedBy(), CultivatedLand_.addedBy),
+                buildSpecification(criteria.getFarmFieldId(), root ->
+                    root.join(CultivatedLand_.farmField, JoinType.LEFT).get(CultivatedLandFarmerFieldOwner_.id)
+                ),
                 buildSpecification(criteria.getSeasonId(), root ->
                     root.join(CultivatedLand_.season, JoinType.LEFT).get(CultivatedLandSeason_.id)
                 )

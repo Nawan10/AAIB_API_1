@@ -1,0 +1,29 @@
+{
+  "annotations": {
+    "changelogDate": "20250504081728"
+  },
+  "applications": "*",
+  "clientRootFolder": "aaibapi1",
+  "databaseType": "sql",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "damageCategoryId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "damageTypeId",
+      "fieldType": "Integer"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "aaibapi1",
+  "name": "InsurancePolicyDamageCultivatedLandDamageReason",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

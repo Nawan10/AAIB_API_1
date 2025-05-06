@@ -1,0 +1,58 @@
+{
+  "annotations": {
+    "changelogDate": "20250504091737"
+  },
+  "applications": "*",
+  "clientRootFolder": "aaibapi1",
+  "databaseType": "sql",
+  "fields": [
+    {
+      "fieldName": "startDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "percentage",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "canlendarCropStatus",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "reason",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "addedBy",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "aaibapi1",
+  "name": "CanlendarCrop",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "canlendarCropSeason",
+      "relationshipName": "season",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "canlendarCropCropType",
+      "relationshipName": "crop",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

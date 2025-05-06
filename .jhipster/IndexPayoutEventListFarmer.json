@@ -1,0 +1,61 @@
+{
+  "annotations": {
+    "changelogDate": "20250504090256"
+  },
+  "applications": "*",
+  "clientRootFolder": "aaibapi1",
+  "databaseType": "sql",
+  "fields": [
+    {
+      "fieldName": "farmerId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "farmerName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nicNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "addressFirstLine",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "contactNoEmail",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "provinceId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "districtId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "dsId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "gnId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "city",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "addedDate",
+      "fieldType": "Instant"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "aaibapi1",
+  "name": "IndexPayoutEventListFarmer",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

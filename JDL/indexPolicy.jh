@@ -1,0 +1,68 @@
+entity IndexPolicy{
+  startDate LocalDate
+  endDate LocalDate
+  stageNo Integer
+  indexStatus Integer
+}
+
+entity IndexPolicyInsurancePolicy{
+  name String
+  policyNo String
+  isActivate Integer
+}
+
+entity IndexPolicySeason{
+    name String
+    period String  
+}
+
+entity IndexPolicyCropVariety {
+  name String
+  noOfStages Integer
+  image String
+  description String
+  addedBy Integer
+  createdAt LocalDate
+}
+
+entity IndexPolicyCropType {
+    crop String
+    image String
+    mainCrop Integer
+    cropCode String
+    noOfStages String
+    description String
+    cropTypesId Integer
+    unitsId Integer
+    area Double
+    sumInsured Double
+    minSumInsured Double
+    maxSumInsured Double
+    subsidisedPremiumRate Double
+}
+
+entity IndexPolicyWeatherStation {
+    name String
+    code String
+    latitude Double
+    longitude Double
+    gnId Integer
+    districtId Integer
+    provinceId Integer
+    dsId Integer
+    addedBy Integer
+    createdAt LocalDate
+}
+
+relationship ManyToOne {
+    IndexPolicy {policy} to IndexPolicyInsurancePolicy
+    IndexPolicy {season} to IndexPolicySeason
+    IndexPolicy {cropVariety} to IndexPolicyCropVariety
+    IndexPolicy {crop} to IndexPolicyCropType
+    IndexPolicy {weatherStation} to IndexPolicyWeatherStation
+}
+
+
+service * with serviceClass
+paginate * with pagination
+filter *

@@ -1,0 +1,37 @@
+{
+  "annotations": {
+    "changelogDate": "20250505134808"
+  },
+  "applications": "*",
+  "clientRootFolder": "aaibapi1",
+  "databaseType": "sql",
+  "fields": [
+    {
+      "fieldName": "duration",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "stages",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "addedBy",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "addedDate",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "aaibapi1",
+  "name": "CropVarietyCropDuration",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

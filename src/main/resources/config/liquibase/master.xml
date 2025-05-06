@@ -35,6 +35,47 @@
     <include file="config/liquibase/changelog/20250502180922_added_entity_CultivatedCropCropType.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20250502180923_added_entity_CultivatedCropCultivatedLand.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20250502180924_added_entity_CultivatedCropLandSeason.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250504081726_added_entity_InsurancePolicyDamage.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250504081727_added_entity_InsurancePolicy.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250504081728_added_entity_InsurancePolicyDamageCultivatedLandDamageReason.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250504082502_added_entity_CultivatedLandDamageReason.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250504082503_added_entity_CultivatedLandDamageReasonDamageCategory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250504082504_added_entity_CultivatedLandDamageReasonDamageType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250504084008_added_entity_InsuranceCultivatedLandCoverages.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250504084009_added_entity_InsuranceCultivatedLandCoveragesInsuranceCultivatedLand.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250504084010_added_entity_IndexCoverages.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250504084011_added_entity_IndexCoveragesCultivatedLandDamageReason.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250504090253_added_entity_IndexPayoutEventList.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250504090254_added_entity_IndexPayoutEventListCultivatedLand.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250504090255_added_entity_IndexPayoutEventListSeason.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250504090256_added_entity_IndexPayoutEventListFarmer.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250504091737_added_entity_CanlendarCrop.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250504091738_added_entity_CanlendarCropSeason.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250504091739_added_entity_CanlendarCropCropType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250504092451_added_entity_CropDamage.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250504092452_added_entity_CropDamageCropType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250504092946_added_entity_CropDamageDamage.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250505130127_added_entity_CultivatedLandFarmerFieldOwner.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250505130330_added_entity_InsuranceCultivatedLandFarmer.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250505130331_added_entity_InsuranceCultivatedLandCultivatedLand.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250505131526_added_entity_CropDuration.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250505131527_added_entity_CropDurationCropType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250505132648_added_entity_CultivatedLandFarmers.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250505132649_added_entity_CultivatedLandFarmerLand.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250505132650_added_entity_CultivatedLandFarmer.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250505134039_added_entity_CultivatedLandFarmers.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250505134040_added_entity_CultivatedLandFarmerLand.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250505134041_added_entity_CultivatedLandFarmersFarmer.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250505134807_added_entity_CropVariety.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250505134808_added_entity_CropVarietyCropDuration.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250505134809_added_entity_CropVarietyCropType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250505140200_added_entity_IndexPolicy.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250505140201_added_entity_IndexPolicyInsurancePolicy.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250505140202_added_entity_IndexPolicySeason.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250505140203_added_entity_IndexPolicyCropVariety.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250505140204_added_entity_IndexPolicyCropType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250505140205_added_entity_IndexPolicyWeatherStation.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250505140841_added_entity_Mahaweli.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20250502173958_added_entity_constraints_InsuranceCultivatedLand.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20250502174000_added_entity_constraints_CultivatedLand.xml" relativeToChangelogFile="false"/>
@@ -45,6 +86,18 @@
     <include file="config/liquibase/changelog/20250502180255_added_entity_constraints_CultivatedLandDamageReport.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20250502180921_added_entity_constraints_CultivatedCrop.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20250502180923_added_entity_constraints_CultivatedCropCultivatedLand.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250504081726_added_entity_constraints_InsurancePolicyDamage.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250504082502_added_entity_constraints_CultivatedLandDamageReason.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250504084008_added_entity_constraints_InsuranceCultivatedLandCoverages.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250504084010_added_entity_constraints_IndexCoverages.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250504090253_added_entity_constraints_IndexPayoutEventList.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250504091737_added_entity_constraints_CanlendarCrop.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250504092451_added_entity_constraints_CropDamage.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250505131526_added_entity_constraints_CropDuration.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250505132648_added_entity_constraints_CultivatedLandFarmers.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250505134039_added_entity_constraints_CultivatedLandFarmers.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250505134807_added_entity_constraints_CropVariety.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250505140200_added_entity_constraints_IndexPolicy.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

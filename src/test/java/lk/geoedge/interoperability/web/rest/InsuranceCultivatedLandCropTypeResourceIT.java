@@ -1417,11 +1417,15 @@ class InsuranceCultivatedLandCropTypeResourceIT {
         partialUpdatedInsuranceCultivatedLandCropType.setId(insuranceCultivatedLandCropType.getId());
 
         partialUpdatedInsuranceCultivatedLandCropType
-            .crop(UPDATED_CROP)
+            .mainCrop(UPDATED_MAIN_CROP)
+            .cropCode(UPDATED_CROP_CODE)
             .noOfStages(UPDATED_NO_OF_STAGES)
-            .cropTypesId(UPDATED_CROP_TYPES_ID)
+            .description(UPDATED_DESCRIPTION)
+            .unitsId(UPDATED_UNITS_ID)
             .area(UPDATED_AREA)
-            .sumInsured(UPDATED_SUM_INSURED);
+            .sumInsured(UPDATED_SUM_INSURED)
+            .minSumInsured(UPDATED_MIN_SUM_INSURED)
+            .maxSumInsured(UPDATED_MAX_SUM_INSURED);
 
         restInsuranceCultivatedLandCropTypeMockMvc
             .perform(

@@ -1,0 +1,40 @@
+entity CultivatedLandFarmers {
+  relationId Integer
+  createdAt LocalDate
+  addedBy String
+}
+
+entity CultivatedLandFarmerLand {
+  landStatus String
+  urea Double
+  mop Double
+  tsp Double
+  createdAt LocalDate
+  addedBy String
+}
+
+entity CultivatedLandFarmersFarmer {
+    farmerId String
+    farmerName String
+    nicNo String
+    addressFirstLine String
+    contactNoEmail String
+    provinceId Integer
+    districtId Integer
+    dsId Integer
+    gnId Integer
+    city String
+    addedDate Instant
+}
+
+/**
+ * Many to one relationship.
+ */
+relationship ManyToOne {
+    CultivatedLandFarmers {farmer} to CultivatedLandFarmersFarmer
+    CultivatedLandFarmers {cultivatedLand} to CultivatedLandFarmerLand
+}
+
+service * with serviceClass
+paginate * with pagination
+filter *

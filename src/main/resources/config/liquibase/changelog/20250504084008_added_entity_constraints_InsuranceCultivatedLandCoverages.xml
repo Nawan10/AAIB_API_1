@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity InsuranceCultivatedLandCoverages.
+    -->
+    <changeSet id="20250504084008-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="insurance_cultivated_land_id"
+                                 baseTableName="insurance_cultivated_land_coverages"
+                                 constraintName="fk_insurance_cultivated_land_co__insurance_cultivated_lan_f1_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="insurance_cultivated_land_coverages_insurance_cultivated_land"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="index_coverage_id"
+                                 baseTableName="insurance_cultivated_land_coverages"
+                                 constraintName="fk_insurance_cultivated_land_coverages__index_coverage_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="index_coverages"
+                                 />
+    </changeSet>
+</databaseChangeLog>

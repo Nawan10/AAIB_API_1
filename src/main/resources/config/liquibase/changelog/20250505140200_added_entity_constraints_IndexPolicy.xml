@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity IndexPolicy.
+    -->
+    <changeSet id="20250505140200-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="policy_id"
+                                 baseTableName="index_policy"
+                                 constraintName="fk_index_policy__policy_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="index_policy_insurance_policy"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="season_id"
+                                 baseTableName="index_policy"
+                                 constraintName="fk_index_policy__season_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="index_policy_season"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="crop_variety_id"
+                                 baseTableName="index_policy"
+                                 constraintName="fk_index_policy__crop_variety_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="index_policy_crop_variety"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="crop_id"
+                                 baseTableName="index_policy"
+                                 constraintName="fk_index_policy__crop_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="index_policy_crop_type"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="weather_station_id"
+                                 baseTableName="index_policy"
+                                 constraintName="fk_index_policy__weather_station_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="index_policy_weather_station"
+                                 />
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity CultivatedLandFarmerFieldOwner.
+    -->
+    <changeSet id="20250505130127-1" author="jhipster">
+        <createTable tableName="cultivated_land_farmer_field_owner">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="land_plot_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="land_registry_no" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="total_land_extent" type="double">
+                <constraints nullable="true" />
+            </column>
+            <column name="calculated_area" type="double">
+                <constraints nullable="true" />
+            </column>
+            <column name="province_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="district_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="ds_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="gn_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="center_lat" type="double">
+                <constraints nullable="true" />
+            </column>
+            <column name="center_lng" type="double">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20250505130127-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/cultivated_land_farmer_field_owner.csv"
+                  separator=";"
+                  tableName="cultivated_land_farmer_field_owner"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="land_plot_name" type="string"/>
+            <column name="land_registry_no" type="string"/>
+            <column name="total_land_extent" type="numeric"/>
+            <column name="calculated_area" type="numeric"/>
+            <column name="province_id" type="string"/>
+            <column name="district_id" type="string"/>
+            <column name="ds_id" type="string"/>
+            <column name="gn_id" type="string"/>
+            <column name="center_lat" type="numeric"/>
+            <column name="center_lng" type="numeric"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

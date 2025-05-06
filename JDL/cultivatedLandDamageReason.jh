@@ -1,0 +1,23 @@
+entity CultivatedLandDamageReason {
+    name String
+}
+
+entity CultivatedLandDamageReasonDamageCategory{
+  categoryName String
+}
+
+entity CultivatedLandDamageReasonDamageType{
+  typeName String
+}
+
+/**
+ * Many to one relationship.
+ */
+relationship ManyToOne {
+    CultivatedLandDamageReason {damageCategory} to CultivatedLandDamageReasonDamageCategory
+    CultivatedLandDamageReason {damageType} to CultivatedLandDamageReasonDamageType
+}
+
+service * with serviceClass
+paginate * with pagination
+filter *

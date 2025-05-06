@@ -1,0 +1,64 @@
+{
+  "annotations": {
+    "changelogDate": "20250505140200"
+  },
+  "applications": "*",
+  "clientRootFolder": "aaibapi1",
+  "databaseType": "sql",
+  "fields": [
+    {
+      "fieldName": "startDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "stageNo",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "indexStatus",
+      "fieldType": "Integer"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "aaibapi1",
+  "name": "IndexPolicy",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "indexPolicyInsurancePolicy",
+      "relationshipName": "policy",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "indexPolicySeason",
+      "relationshipName": "season",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "indexPolicyCropVariety",
+      "relationshipName": "cropVariety",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "indexPolicyCropType",
+      "relationshipName": "crop",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "indexPolicyWeatherStation",
+      "relationshipName": "weatherStation",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

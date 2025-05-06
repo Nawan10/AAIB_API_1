@@ -37,6 +37,12 @@
   "pagination": "pagination",
   "relationships": [
     {
+      "otherEntityName": "cultivatedLandFarmerFieldOwner",
+      "relationshipName": "farmField",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
       "otherEntityName": "cultivatedLandSeason",
       "relationshipName": "season",
       "relationshipSide": "left",

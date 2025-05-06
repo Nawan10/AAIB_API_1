@@ -10,6 +10,13 @@
     -->
     <changeSet id="20250502174000-2" author="jhipster">
 
+        <addForeignKeyConstraint baseColumnNames="farm_field_id"
+                                 baseTableName="cultivated_land"
+                                 constraintName="fk_cultivated_land__farm_field_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cultivated_land_farmer_field_owner"
+                                 />
+
         <addForeignKeyConstraint baseColumnNames="season_id"
                                  baseTableName="cultivated_land"
                                  constraintName="fk_cultivated_land__season_id"

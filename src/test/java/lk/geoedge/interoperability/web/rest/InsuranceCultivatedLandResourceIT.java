@@ -15,10 +15,10 @@ import java.time.ZoneId;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicLong;
 import lk.geoedge.interoperability.IntegrationTest;
-import lk.geoedge.interoperability.domain.CultivatedLand;
-import lk.geoedge.interoperability.domain.Farmer;
 import lk.geoedge.interoperability.domain.InsuranceCultivatedLand;
 import lk.geoedge.interoperability.domain.InsuranceCultivatedLandCropType;
+import lk.geoedge.interoperability.domain.InsuranceCultivatedLandCultivatedLand;
+import lk.geoedge.interoperability.domain.InsuranceCultivatedLandFarmer;
 import lk.geoedge.interoperability.repository.InsuranceCultivatedLandRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -830,12 +830,12 @@ class InsuranceCultivatedLandResourceIT {
     @Test
     @Transactional
     void getAllInsuranceCultivatedLandsByFarmerIsEqualToSomething() throws Exception {
-        Farmer farmer;
-        if (TestUtil.findAll(em, Farmer.class).isEmpty()) {
+        InsuranceCultivatedLandFarmer farmer;
+        if (TestUtil.findAll(em, InsuranceCultivatedLandFarmer.class).isEmpty()) {
             insuranceCultivatedLandRepository.saveAndFlush(insuranceCultivatedLand);
-            farmer = FarmerResourceIT.createEntity();
+            farmer = InsuranceCultivatedLandFarmerResourceIT.createEntity();
         } else {
-            farmer = TestUtil.findAll(em, Farmer.class).get(0);
+            farmer = TestUtil.findAll(em, InsuranceCultivatedLandFarmer.class).get(0);
         }
         em.persist(farmer);
         em.flush();
@@ -852,12 +852,12 @@ class InsuranceCultivatedLandResourceIT {
     @Test
     @Transactional
     void getAllInsuranceCultivatedLandsByCultivatedLandIsEqualToSomething() throws Exception {
-        CultivatedLand cultivatedLand;
-        if (TestUtil.findAll(em, CultivatedLand.class).isEmpty()) {
+        InsuranceCultivatedLandCultivatedLand cultivatedLand;
+        if (TestUtil.findAll(em, InsuranceCultivatedLandCultivatedLand.class).isEmpty()) {
             insuranceCultivatedLandRepository.saveAndFlush(insuranceCultivatedLand);
-            cultivatedLand = CultivatedLandResourceIT.createEntity();
+            cultivatedLand = InsuranceCultivatedLandCultivatedLandResourceIT.createEntity();
         } else {
-            cultivatedLand = TestUtil.findAll(em, CultivatedLand.class).get(0);
+            cultivatedLand = TestUtil.findAll(em, InsuranceCultivatedLandCultivatedLand.class).get(0);
         }
         em.persist(cultivatedLand);
         em.flush();
@@ -1062,7 +1062,10 @@ class InsuranceCultivatedLandResourceIT {
 
         partialUpdatedInsuranceCultivatedLand
             .sumInsuredPerAcre(UPDATED_SUM_INSURED_PER_ACRE)
+            .insuranceExtent(UPDATED_INSURANCE_EXTENT)
             .sumAmount(UPDATED_SUM_AMOUNT)
+            .insuranceStatus(UPDATED_INSURANCE_STATUS)
+            .createdAt(UPDATED_CREATED_AT)
             .addedBy(UPDATED_ADDED_BY);
 
         restInsuranceCultivatedLandMockMvc

@@ -1,8 +1,8 @@
 package lk.geoedge.interoperability.domain;
 
-import static lk.geoedge.interoperability.domain.CultivatedLandTestSamples.*;
-import static lk.geoedge.interoperability.domain.FarmerTestSamples.*;
 import static lk.geoedge.interoperability.domain.InsuranceCultivatedLandCropTypeTestSamples.*;
+import static lk.geoedge.interoperability.domain.InsuranceCultivatedLandCultivatedLandTestSamples.*;
+import static lk.geoedge.interoperability.domain.InsuranceCultivatedLandFarmerTestSamples.*;
 import static lk.geoedge.interoperability.domain.InsuranceCultivatedLandTestSamples.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -28,10 +28,10 @@ class InsuranceCultivatedLandTest {
     @Test
     void farmerTest() {
         InsuranceCultivatedLand insuranceCultivatedLand = getInsuranceCultivatedLandRandomSampleGenerator();
-        Farmer farmerBack = getFarmerRandomSampleGenerator();
+        InsuranceCultivatedLandFarmer insuranceCultivatedLandFarmerBack = getInsuranceCultivatedLandFarmerRandomSampleGenerator();
 
-        insuranceCultivatedLand.setFarmer(farmerBack);
-        assertThat(insuranceCultivatedLand.getFarmer()).isEqualTo(farmerBack);
+        insuranceCultivatedLand.setFarmer(insuranceCultivatedLandFarmerBack);
+        assertThat(insuranceCultivatedLand.getFarmer()).isEqualTo(insuranceCultivatedLandFarmerBack);
 
         insuranceCultivatedLand.farmer(null);
         assertThat(insuranceCultivatedLand.getFarmer()).isNull();
@@ -40,10 +40,11 @@ class InsuranceCultivatedLandTest {
     @Test
     void cultivatedLandTest() {
         InsuranceCultivatedLand insuranceCultivatedLand = getInsuranceCultivatedLandRandomSampleGenerator();
-        CultivatedLand cultivatedLandBack = getCultivatedLandRandomSampleGenerator();
+        InsuranceCultivatedLandCultivatedLand insuranceCultivatedLandCultivatedLandBack =
+            getInsuranceCultivatedLandCultivatedLandRandomSampleGenerator();
 
-        insuranceCultivatedLand.setCultivatedLand(cultivatedLandBack);
-        assertThat(insuranceCultivatedLand.getCultivatedLand()).isEqualTo(cultivatedLandBack);
+        insuranceCultivatedLand.setCultivatedLand(insuranceCultivatedLandCultivatedLandBack);
+        assertThat(insuranceCultivatedLand.getCultivatedLand()).isEqualTo(insuranceCultivatedLandCultivatedLandBack);
 
         insuranceCultivatedLand.cultivatedLand(null);
         assertThat(insuranceCultivatedLand.getCultivatedLand()).isNull();

@@ -1,0 +1,10 @@
+entity Mahaweli{
+    mahaweli String
+    code String
+    addedBy Integer
+    addedDate LocalDate
+}
+
+service * with serviceClass
+paginate * with pagination
+filter *

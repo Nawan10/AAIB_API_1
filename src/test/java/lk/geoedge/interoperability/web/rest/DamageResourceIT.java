@@ -814,8 +814,8 @@ class DamageResourceIT {
         partialUpdatedDamage
             .damageCode(UPDATED_DAMAGE_CODE)
             .damageFamily(UPDATED_DAMAGE_FAMILY)
-            .damageSpecies(UPDATED_DAMAGE_SPECIES)
-            .createdAt(UPDATED_CREATED_AT);
+            .damageGenus(UPDATED_DAMAGE_GENUS)
+            .addedBy(UPDATED_ADDED_BY);
 
         restDamageMockMvc
             .perform(
