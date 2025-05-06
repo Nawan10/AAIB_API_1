@@ -39,6 +39,9 @@ public class CultivatedLand implements Serializable {
     private String addedBy;
 
     @ManyToOne(fetch = FetchType.EAGER)
+    private CultivatedLandFarmerFieldOwner farmField;
+
+    @ManyToOne(fetch = FetchType.EAGER)
     private CultivatedLandSeason season;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
@@ -132,6 +135,19 @@ public class CultivatedLand implements Serializable {
 
     public void setAddedBy(String addedBy) {
         this.addedBy = addedBy;
+    }
+
+    public CultivatedLandFarmerFieldOwner getFarmField() {
+        return this.farmField;
+    }
+
+    public void setFarmField(CultivatedLandFarmerFieldOwner cultivatedLandFarmerFieldOwner) {
+        this.farmField = cultivatedLandFarmerFieldOwner;
+    }
+
+    public CultivatedLand farmField(CultivatedLandFarmerFieldOwner cultivatedLandFarmerFieldOwner) {
+        this.setFarmField(cultivatedLandFarmerFieldOwner);
+        return this;
     }
 
     public CultivatedLandSeason getSeason() {

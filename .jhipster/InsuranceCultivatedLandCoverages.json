@@ -1,0 +1,46 @@
+{
+  "annotations": {
+    "changelogDate": "20250504084008"
+  },
+  "applications": "*",
+  "clientRootFolder": "aaibapi1",
+  "databaseType": "sql",
+  "fields": [
+    {
+      "fieldName": "converageAmount",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "isSelect",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "addedBy",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "aaibapi1",
+  "name": "InsuranceCultivatedLandCoverages",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "insuranceCultivatedLandCoveragesInsuranceCultivatedLand",
+      "relationshipName": "insuranceCultivatedLand",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "indexCoverages",
+      "relationshipName": "indexCoverage",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

@@ -64,6 +64,7 @@ public class CultivatedLandAsserts {
     public static void assertCultivatedLandUpdatableRelationshipsEquals(CultivatedLand expected, CultivatedLand actual) {
         assertThat(actual)
             .as("Verify CultivatedLand relationships")
+            .satisfies(a -> assertThat(a.getFarmField()).as("check farmField").isEqualTo(expected.getFarmField()))
             .satisfies(a -> assertThat(a.getSeason()).as("check season").isEqualTo(expected.getSeason()));
     }
 }

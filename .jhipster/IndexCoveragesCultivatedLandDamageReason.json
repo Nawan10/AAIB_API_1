@@ -1,0 +1,21 @@
+{
+  "annotations": {
+    "changelogDate": "20250504084011"
+  },
+  "applications": "*",
+  "clientRootFolder": "aaibapi1",
+  "databaseType": "sql",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "aaibapi1",
+  "name": "IndexCoveragesCultivatedLandDamageReason",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

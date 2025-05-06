@@ -1,0 +1,42 @@
+{
+  "annotations": {
+    "changelogDate": "20250504081726"
+  },
+  "applications": "*",
+  "clientRootFolder": "aaibapi1",
+  "databaseType": "sql",
+  "fields": [
+    {
+      "fieldName": "percentage",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "isFree",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "isPaid",
+      "fieldType": "Integer"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "aaibapi1",
+  "name": "InsurancePolicyDamage",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "insurancePolicy",
+      "relationshipName": "insurancePolicy",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "insurancePolicyDamageCultivatedLandDamageReason",
+      "relationshipName": "damageReason",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

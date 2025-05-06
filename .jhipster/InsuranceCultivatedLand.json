@@ -45,13 +45,13 @@
   "pagination": "pagination",
   "relationships": [
     {
-      "otherEntityName": "farmer",
+      "otherEntityName": "insuranceCultivatedLandFarmer",
       "relationshipName": "farmer",
       "relationshipSide": "left",
       "relationshipType": "many-to-one"
     },
     {
-      "otherEntityName": "cultivatedLand",
+      "otherEntityName": "insuranceCultivatedLandCultivatedLand",
       "relationshipName": "cultivatedLand",
       "relationshipSide": "left",
       "relationshipType": "many-to-one"

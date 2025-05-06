@@ -1,0 +1,69 @@
+{
+  "annotations": {
+    "changelogDate": "20250505134809"
+  },
+  "applications": "*",
+  "clientRootFolder": "aaibapi1",
+  "databaseType": "sql",
+  "fields": [
+    {
+      "fieldName": "crop",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "image",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "mainCrop",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "cropCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "noOfStages",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cropTypesId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "unitsId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "area",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "sumInsured",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "minSumInsured",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "maxSumInsured",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "subsidisedPremiumRate",
+      "fieldType": "Double"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "aaibapi1",
+  "name": "CropVarietyCropType",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

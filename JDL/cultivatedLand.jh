@@ -1,0 +1,38 @@
+entity CultivatedLand {
+  landStatus String
+  urea Double
+  mop Double
+  tsp Double
+  createdAt LocalDate
+  addedBy String
+}
+
+entity CultivatedLandFarmerFieldOwner {
+    landPlotName String
+    landRegistryNo String
+    totalLandExtent Double
+    calculatedArea Double
+    provinceId String
+    districtId String
+    dsId String
+    gnId String
+    centerLat Double
+    centerLng Double
+}
+
+entity CultivatedLandSeason {
+    name String
+    period String
+}
+
+/**
+ * Many to one relationship.
+ */
+relationship ManyToOne {
+    CultivatedLand {farmField} to CultivatedLandFarmerFieldOwner
+    CultivatedLand {season} to CultivatedLandSeason
+}
+
+service * with serviceClass
+paginate * with pagination
+filter *

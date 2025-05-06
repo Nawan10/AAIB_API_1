@@ -1,0 +1,29 @@
+{
+  "annotations": {
+    "changelogDate": "20250505140201"
+  },
+  "applications": "*",
+  "clientRootFolder": "aaibapi1",
+  "databaseType": "sql",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "policyNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isActivate",
+      "fieldType": "Integer"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "aaibapi1",
+  "name": "IndexPolicyInsurancePolicy",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

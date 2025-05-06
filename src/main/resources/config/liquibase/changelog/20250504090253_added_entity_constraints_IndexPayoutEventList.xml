@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity IndexPayoutEventList.
+    -->
+    <changeSet id="20250504090253-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="cultivated_farmer_id"
+                                 baseTableName="index_payout_event_list"
+                                 constraintName="fk_index_payout_event_list__cultivated_farmer_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="index_payout_event_list_farmer"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="cultivated_land_id"
+                                 baseTableName="index_payout_event_list"
+                                 constraintName="fk_index_payout_event_list__cultivated_land_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="index_payout_event_list_cultivated_land"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="season_id"
+                                 baseTableName="index_payout_event_list"
+                                 constraintName="fk_index_payout_event_list__season_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="index_payout_event_list_season"
+                                 />
+    </changeSet>
+</databaseChangeLog>

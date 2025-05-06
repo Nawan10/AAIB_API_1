@@ -32,6 +32,9 @@
             <column name="added_by" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
+            <column name="farm_field_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
             <column name="season_id" type="bigint">
                 <constraints nullable="true" />
             </column>

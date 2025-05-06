@@ -1,0 +1,42 @@
+entity CanlendarCrop {
+    startDate LocalDate
+    endDate LocalDate
+    percentage Double
+    canlendarCropStatus Integer
+    reason String
+    createdAt LocalDate
+    addedBy String
+}
+
+entity CanlendarCropSeason{
+    name String
+    period String
+}
+
+entity CanlendarCropCropType {
+    crop String
+    image String
+    mainCrop Integer
+    cropCode String
+    noOfStages String
+    description String
+    cropTypesId Integer
+    unitsId Integer
+    area Double
+    sumInsured Double
+    minSumInsured Double
+    maxSumInsured Double
+    subsidisedPremiumRate Double
+}
+
+/**
+ * Many to one relationship.
+ */
+relationship ManyToOne {
+    CanlendarCrop {season} to CanlendarCropSeason
+    CanlendarCrop {crop} to CanlendarCropCropType
+}
+
+service * with serviceClass
+paginate * with pagination
+filter *

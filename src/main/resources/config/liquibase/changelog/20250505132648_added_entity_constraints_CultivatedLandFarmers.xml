@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity CultivatedLandFarmers.
+    -->
+    <changeSet id="20250505132648-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="farmer_id"
+                                 baseTableName="cultivated_land_farmers"
+                                 constraintName="fk_cultivated_land_farmers__farmer_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cultivated_land_farmer"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="cultivated_land_id"
+                                 baseTableName="cultivated_land_farmers"
+                                 constraintName="fk_cultivated_land_farmers__cultivated_land_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cultivated_land_farmer_land"
+                                 />
+    </changeSet>
+</databaseChangeLog>

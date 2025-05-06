@@ -42,11 +42,11 @@ public class Damage implements Serializable {
     @Column(name = "added_by")
     private String addedBy;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties(value = { "damages" }, allowSetters = true)
     private DamageCategory damageCategory;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties(value = { "damages" }, allowSetters = true)
     private DamageType damageType;
 

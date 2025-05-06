@@ -16,6 +16,7 @@ import java.util.Random;
 import java.util.concurrent.atomic.AtomicLong;
 import lk.geoedge.interoperability.IntegrationTest;
 import lk.geoedge.interoperability.domain.CultivatedLand;
+import lk.geoedge.interoperability.domain.CultivatedLandFarmerFieldOwner;
 import lk.geoedge.interoperability.domain.CultivatedLandSeason;
 import lk.geoedge.interoperability.repository.CultivatedLandRepository;
 import org.junit.jupiter.api.AfterEach;
@@ -620,6 +621,28 @@ class CultivatedLandResourceIT {
 
     @Test
     @Transactional
+    void getAllCultivatedLandsByFarmFieldIsEqualToSomething() throws Exception {
+        CultivatedLandFarmerFieldOwner farmField;
+        if (TestUtil.findAll(em, CultivatedLandFarmerFieldOwner.class).isEmpty()) {
+            cultivatedLandRepository.saveAndFlush(cultivatedLand);
+            farmField = CultivatedLandFarmerFieldOwnerResourceIT.createEntity();
+        } else {
+            farmField = TestUtil.findAll(em, CultivatedLandFarmerFieldOwner.class).get(0);
+        }
+        em.persist(farmField);
+        em.flush();
+        cultivatedLand.setFarmField(farmField);
+        cultivatedLandRepository.saveAndFlush(cultivatedLand);
+        Long farmFieldId = farmField.getId();
+        // Get all the cultivatedLandList where farmField equals to farmFieldId
+        defaultCultivatedLandShouldBeFound("farmFieldId.equals=" + farmFieldId);
+
+        // Get all the cultivatedLandList where farmField equals to (farmFieldId + 1)
+        defaultCultivatedLandShouldNotBeFound("farmFieldId.equals=" + (farmFieldId + 1));
+    }
+
+    @Test
+    @Transactional
     void getAllCultivatedLandsBySeasonIsEqualToSomething() throws Exception {
         CultivatedLandSeason season;
         if (TestUtil.findAll(em, CultivatedLandSeason.class).isEmpty()) {
@@ -796,7 +819,7 @@ class CultivatedLandResourceIT {
         CultivatedLand partialUpdatedCultivatedLand = new CultivatedLand();
         partialUpdatedCultivatedLand.setId(cultivatedLand.getId());
 
-        partialUpdatedCultivatedLand.landStatus(UPDATED_LAND_STATUS).urea(UPDATED_UREA);
+        partialUpdatedCultivatedLand.urea(UPDATED_UREA).mop(UPDATED_MOP).addedBy(UPDATED_ADDED_BY);
 
         restCultivatedLandMockMvc
             .perform(

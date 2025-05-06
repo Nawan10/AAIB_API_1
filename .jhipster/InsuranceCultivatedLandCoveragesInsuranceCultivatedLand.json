@@ -1,0 +1,49 @@
+{
+  "annotations": {
+    "changelogDate": "20250504084009"
+  },
+  "applications": "*",
+  "clientRootFolder": "aaibapi1",
+  "databaseType": "sql",
+  "fields": [
+    {
+      "fieldName": "cropDurationId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "insurancePoliceId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sumInsuredPerAcre",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "insuranceExtent",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "sumAmount",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "insuranceStatus",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "addedBy",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "aaibapi1",
+  "name": "InsuranceCultivatedLandCoveragesInsuranceCultivatedLand",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

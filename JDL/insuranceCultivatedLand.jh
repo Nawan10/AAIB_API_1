@@ -9,7 +9,7 @@ entity InsuranceCultivatedLand {
     addedBy String
 }
 
-entity Farmer {
+entity InsuranceCultivatedLandFarmer {
     farmerId String
     farmerName String
     nicNo String
@@ -23,7 +23,7 @@ entity Farmer {
     addedDate Instant
 }
 
-entity CultivatedLand {
+entity InsuranceCultivatedLandCultivatedLand {
   landStatus String
   urea Double
   mop Double
@@ -49,20 +49,13 @@ entity InsuranceCultivatedLandCropType {
     subsidisedPremiumRate Double
 }
 
-//Season
-entity CultivatedLandSeason {
-    name String
-    period String
-}
-
 /**
  * Many to one relationship.
  */
 relationship ManyToOne {
-    InsuranceCultivatedLand {farmer } to Farmer
-    InsuranceCultivatedLand {cultivatedLand } to CultivatedLand
+    InsuranceCultivatedLand {farmer } to InsuranceCultivatedLandFarmer
+    InsuranceCultivatedLand {cultivatedLand } to InsuranceCultivatedLandCultivatedLand
     InsuranceCultivatedLand {crop} to InsuranceCultivatedLandCropType
-    CultivatedLand {season} to CultivatedLandSeason
 }
 
 service * with serviceClass

@@ -1,0 +1,41 @@
+entity InsuranceCultivatedLandCoverages {
+    converageAmount Double
+    isSelect Boolean
+    createdAt Instant
+    addedBy String
+}
+
+entity InsuranceCultivatedLandCoveragesInsuranceCultivatedLand {
+    cropDurationId String
+    insurancePoliceId String
+    sumInsuredPerAcre Integer
+    insuranceExtent Integer
+    sumAmount Integer
+    insuranceStatus String
+    createdAt LocalDate
+    addedBy String
+}
+
+entity IndexCoverages {
+    indexProductId Integer
+    premiumRate Integer
+    isFree Integer
+    isPaid Integer
+}
+
+entity IndexCoveragesCultivatedLandDamageReason {
+    name String
+}
+
+/**
+ * Many to one relationship.
+ */
+relationship ManyToOne {
+    InsuranceCultivatedLandCoverages {insuranceCultivatedLand} to InsuranceCultivatedLandCoveragesInsuranceCultivatedLand
+    InsuranceCultivatedLandCoverages {indexCoverage} to IndexCoverages
+    IndexCoverages {damageReason} to IndexCoveragesCultivatedLandDamageReason    
+}
+
+service * with serviceClass
+paginate * with pagination
+filter *

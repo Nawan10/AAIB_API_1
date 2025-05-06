@@ -1,0 +1,44 @@
+entity CropVariety {
+  name String
+  noOfStages Integer
+  image String
+  description String
+  addedBy Integer
+  createdAt LocalDate
+}
+
+entity CropVarietyCropDuration {
+    duration Integer
+    name String
+    stages String
+    addedBy Integer
+    addedDate LocalDate
+}
+
+entity CropVarietyCropType {
+    crop String
+    image String
+    mainCrop Integer
+    cropCode String
+    noOfStages String
+    description String
+    cropTypesId Integer
+    unitsId Integer
+    area Double
+    sumInsured Double
+    minSumInsured Double
+    maxSumInsured Double
+    subsidisedPremiumRate Double
+}
+
+/**
+ * Many to one relationship.
+ */
+relationship ManyToOne {
+    CropVariety {crop} to CropVarietyCropType
+    CropVariety {cropDuration} to CropVarietyCropDuration
+}
+
+service * with serviceClass
+paginate * with pagination
+filter *

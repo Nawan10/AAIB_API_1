@@ -1,5 +1,6 @@
 package lk.geoedge.interoperability.domain;
 
+import static lk.geoedge.interoperability.domain.CultivatedLandFarmerFieldOwnerTestSamples.*;
 import static lk.geoedge.interoperability.domain.CultivatedLandSeasonTestSamples.*;
 import static lk.geoedge.interoperability.domain.CultivatedLandTestSamples.*;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -21,6 +22,18 @@ class CultivatedLandTest {
 
         cultivatedLand2 = getCultivatedLandSample2();
         assertThat(cultivatedLand1).isNotEqualTo(cultivatedLand2);
+    }
+
+    @Test
+    void farmFieldTest() {
+        CultivatedLand cultivatedLand = getCultivatedLandRandomSampleGenerator();
+        CultivatedLandFarmerFieldOwner cultivatedLandFarmerFieldOwnerBack = getCultivatedLandFarmerFieldOwnerRandomSampleGenerator();
+
+        cultivatedLand.setFarmField(cultivatedLandFarmerFieldOwnerBack);
+        assertThat(cultivatedLand.getFarmField()).isEqualTo(cultivatedLandFarmerFieldOwnerBack);
+
+        cultivatedLand.farmField(null);
+        assertThat(cultivatedLand.getFarmField()).isNull();
     }
 
     @Test

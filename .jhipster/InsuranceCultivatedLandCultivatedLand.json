@@ -1,0 +1,41 @@
+{
+  "annotations": {
+    "changelogDate": "20250505130331"
+  },
+  "applications": "*",
+  "clientRootFolder": "aaibapi1",
+  "databaseType": "sql",
+  "fields": [
+    {
+      "fieldName": "landStatus",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "urea",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "mop",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "tsp",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "addedBy",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "aaibapi1",
+  "name": "InsuranceCultivatedLandCultivatedLand",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

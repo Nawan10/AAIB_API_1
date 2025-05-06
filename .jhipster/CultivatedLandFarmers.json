@@ -1,0 +1,42 @@
+{
+  "annotations": {
+    "changelogDate": "20250505134039"
+  },
+  "applications": "*",
+  "clientRootFolder": "aaibapi1",
+  "databaseType": "sql",
+  "fields": [
+    {
+      "fieldName": "relationId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "addedBy",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "aaibapi1",
+  "name": "CultivatedLandFarmers",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "cultivatedLandFarmersFarmer",
+      "relationshipName": "farmer",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "cultivatedLandFarmerLand",
+      "relationshipName": "cultivatedLand",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

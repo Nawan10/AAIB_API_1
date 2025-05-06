@@ -77,10 +77,11 @@ public class InsuranceCultivatedLandQueryService extends QueryService<InsuranceC
                 buildStringSpecification(criteria.getInsuranceStatus(), InsuranceCultivatedLand_.insuranceStatus),
                 buildRangeSpecification(criteria.getCreatedAt(), InsuranceCultivatedLand_.createdAt),
                 buildStringSpecification(criteria.getAddedBy(), InsuranceCultivatedLand_.addedBy),
-                buildSpecification(criteria.getFarmerId(), root -> root.join(InsuranceCultivatedLand_.farmer, JoinType.LEFT).get(Farmer_.id)
+                buildSpecification(criteria.getFarmerId(), root ->
+                    root.join(InsuranceCultivatedLand_.farmer, JoinType.LEFT).get(InsuranceCultivatedLandFarmer_.id)
                 ),
                 buildSpecification(criteria.getCultivatedLandId(), root ->
-                    root.join(InsuranceCultivatedLand_.cultivatedLand, JoinType.LEFT).get(CultivatedLand_.id)
+                    root.join(InsuranceCultivatedLand_.cultivatedLand, JoinType.LEFT).get(InsuranceCultivatedLandCultivatedLand_.id)
                 ),
                 buildSpecification(criteria.getCropId(), root ->
                     root.join(InsuranceCultivatedLand_.crop, JoinType.LEFT).get(InsuranceCultivatedLandCropType_.id)

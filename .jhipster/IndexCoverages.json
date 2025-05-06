@@ -1,0 +1,40 @@
+{
+  "annotations": {
+    "changelogDate": "20250504084010"
+  },
+  "applications": "*",
+  "clientRootFolder": "aaibapi1",
+  "databaseType": "sql",
+  "fields": [
+    {
+      "fieldName": "indexProductId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "premiumRate",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "isFree",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "isPaid",
+      "fieldType": "Integer"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "aaibapi1",
+  "name": "IndexCoverages",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "indexCoveragesCultivatedLandDamageReason",
+      "relationshipName": "damageReason",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

@@ -1,0 +1,60 @@
+entity IndexPayoutEventList {
+    indexPayoutEventId Integer
+    ascId Integer
+    confirmedBy Integer
+    cultivatedExtent Double
+    payout Double
+    confirmedDate String
+    rejectedBy Integer
+    rejectedDate String
+    reason String
+    finalPayout Double
+    indexPayoutEventStatus Integer
+    isApproved Integer
+    monitoringRange Double
+    isInsurance Integer
+    insuranceCultivatedLand Integer
+    indexChequeId Integer
+    indexProductId Integer
+}
+
+entity IndexPayoutEventListCultivatedLand {
+  landStatus String
+  urea Double
+  mop Double
+  tsp Double
+  createdAt LocalDate
+  addedBy String
+}
+
+entity IndexPayoutEventListSeason{
+    name String
+    period String
+}
+
+entity IndexPayoutEventListFarmer {
+    farmerId String
+    farmerName String
+    nicNo String
+    addressFirstLine String
+    contactNoEmail String
+    provinceId Integer
+    districtId Integer
+    dsId Integer
+    gnId Integer
+    city String
+    addedDate Instant
+}
+
+/**
+ * Many to one relationship.
+ */
+relationship ManyToOne {
+    IndexPayoutEventList {cultivatedFarmer } to IndexPayoutEventListFarmer
+    IndexPayoutEventList {cultivatedLand } to IndexPayoutEventListCultivatedLand
+    IndexPayoutEventList {season} to IndexPayoutEventListSeason
+}
+
+service * with serviceClass
+paginate * with pagination
+filter *

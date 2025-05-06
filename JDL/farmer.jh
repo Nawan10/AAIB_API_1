@@ -1,0 +1,17 @@
+entity Farmer {
+    farmerId String
+    farmerName String
+    nicNo String
+    addressFirstLine String
+    contactNoEmail String
+    provinceId Integer
+    districtId Integer
+    dsId Integer
+    gnId Integer
+    city String
+    addedDate Instant
+}
+
+service * with serviceClass
+paginate * with pagination
+filter *

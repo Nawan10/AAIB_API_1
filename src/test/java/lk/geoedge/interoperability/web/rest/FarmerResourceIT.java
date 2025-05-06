@@ -1057,14 +1057,11 @@ class FarmerResourceIT {
         partialUpdatedFarmer.setId(farmer.getId());
 
         partialUpdatedFarmer
-            .farmerName(UPDATED_FARMER_NAME)
-            .nicNo(UPDATED_NIC_NO)
             .contactNoEmail(UPDATED_CONTACT_NO_EMAIL)
             .provinceId(UPDATED_PROVINCE_ID)
+            .districtId(UPDATED_DISTRICT_ID)
             .dsId(UPDATED_DS_ID)
-            .gnId(UPDATED_GN_ID)
-            .city(UPDATED_CITY)
-            .addedDate(UPDATED_ADDED_DATE);
+            .gnId(UPDATED_GN_ID);
 
         restFarmerMockMvc
             .perform(

@@ -1,0 +1,104 @@
+{
+  "annotations": {
+    "changelogDate": "20250504090253"
+  },
+  "applications": "*",
+  "clientRootFolder": "aaibapi1",
+  "databaseType": "sql",
+  "fields": [
+    {
+      "fieldName": "indexPayoutEventId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "ascId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "confirmedBy",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "cultivatedExtent",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "payout",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "confirmedDate",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "rejectedBy",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "rejectedDate",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "reason",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "finalPayout",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "indexPayoutEventStatus",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "isApproved",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "monitoringRange",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "isInsurance",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "insuranceCultivatedLand",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "indexChequeId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "indexProductId",
+      "fieldType": "Integer"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "aaibapi1",
+  "name": "IndexPayoutEventList",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "indexPayoutEventListFarmer",
+      "relationshipName": "cultivatedFarmer",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "indexPayoutEventListCultivatedLand",
+      "relationshipName": "cultivatedLand",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "indexPayoutEventListSeason",
+      "relationshipName": "season",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

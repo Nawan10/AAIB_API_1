@@ -14,14 +14,14 @@
                                  baseTableName="insurance_cultivated_land"
                                  constraintName="fk_insurance_cultivated_land__farmer_id"
                                  referencedColumnNames="id"
-                                 referencedTableName="farmer"
+                                 referencedTableName="insurance_cultivated_land_farmer"
                                  />
 
         <addForeignKeyConstraint baseColumnNames="cultivated_land_id"
                                  baseTableName="insurance_cultivated_land"
                                  constraintName="fk_insurance_cultivated_land__cultivated_land_id"
                                  referencedColumnNames="id"
-                                 referencedTableName="cultivated_land"
+                                 referencedTableName="insurance_cultivated_land_cultivated_land"
                                  />
 
         <addForeignKeyConstraint baseColumnNames="crop_id"

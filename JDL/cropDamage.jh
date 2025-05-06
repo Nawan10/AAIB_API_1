@@ -1,0 +1,43 @@
+entity CropDamage {
+    addedBy String
+    createdAt LocalDate
+
+}
+
+entity CropDamageCropType {
+    crop String
+    image String
+    mainCrop Integer
+    cropCode String
+    noOfStages String
+    description String
+    cropTypesId Integer
+    unitsId Integer
+    area Double
+    sumInsured Double
+    minSumInsured Double
+    maxSumInsured Double
+    subsidisedPremiumRate Double
+}
+
+entity CropDamageDamage {
+    damageName String
+    damageCode String
+    damageFamily String
+    damageGenus String
+    damageSpecies String
+    createdAt LocalDate
+    addedBy String
+}
+
+/**
+ * Many to one relationship.
+ */
+relationship ManyToOne {
+    CropDamage {crop} to CropDamageCropType
+    CropDamage {damage} to CropDamageDamage
+}
+
+service * with serviceClass
+paginate * with pagination
+filter *

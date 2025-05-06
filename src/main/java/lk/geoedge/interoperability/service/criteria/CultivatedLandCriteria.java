@@ -36,6 +36,8 @@ public class CultivatedLandCriteria implements Serializable, Criteria {
 
     private StringFilter addedBy;
 
+    private LongFilter farmFieldId;
+
     private LongFilter seasonId;
 
     private Boolean distinct;
@@ -50,6 +52,7 @@ public class CultivatedLandCriteria implements Serializable, Criteria {
         this.tsp = other.optionalTsp().map(DoubleFilter::copy).orElse(null);
         this.createdAt = other.optionalCreatedAt().map(LocalDateFilter::copy).orElse(null);
         this.addedBy = other.optionalAddedBy().map(StringFilter::copy).orElse(null);
+        this.farmFieldId = other.optionalFarmFieldId().map(LongFilter::copy).orElse(null);
         this.seasonId = other.optionalSeasonId().map(LongFilter::copy).orElse(null);
         this.distinct = other.distinct;
     }
@@ -192,6 +195,25 @@ public class CultivatedLandCriteria implements Serializable, Criteria {
         this.addedBy = addedBy;
     }
 
+    public LongFilter getFarmFieldId() {
+        return farmFieldId;
+    }
+
+    public Optional<LongFilter> optionalFarmFieldId() {
+        return Optional.ofNullable(farmFieldId);
+    }
+
+    public LongFilter farmFieldId() {
+        if (farmFieldId == null) {
+            setFarmFieldId(new LongFilter());
+        }
+        return farmFieldId;
+    }
+
+    public void setFarmFieldId(LongFilter farmFieldId) {
+        this.farmFieldId = farmFieldId;
+    }
+
     public LongFilter getSeasonId() {
         return seasonId;
     }
@@ -247,6 +269,7 @@ public class CultivatedLandCriteria implements Serializable, Criteria {
             Objects.equals(tsp, that.tsp) &&
             Objects.equals(createdAt, that.createdAt) &&
             Objects.equals(addedBy, that.addedBy) &&
+            Objects.equals(farmFieldId, that.farmFieldId) &&
             Objects.equals(seasonId, that.seasonId) &&
             Objects.equals(distinct, that.distinct)
         );
@@ -254,7 +277,7 @@ public class CultivatedLandCriteria implements Serializable, Criteria {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, landStatus, urea, mop, tsp, createdAt, addedBy, seasonId, distinct);
+        return Objects.hash(id, landStatus, urea, mop, tsp, createdAt, addedBy, farmFieldId, seasonId, distinct);
     }
 
     // prettier-ignore
@@ -268,6 +291,7 @@ public class CultivatedLandCriteria implements Serializable, Criteria {
             optionalTsp().map(f -> "tsp=" + f + ", ").orElse("") +
             optionalCreatedAt().map(f -> "createdAt=" + f + ", ").orElse("") +
             optionalAddedBy().map(f -> "addedBy=" + f + ", ").orElse("") +
+            optionalFarmFieldId().map(f -> "farmFieldId=" + f + ", ").orElse("") +
             optionalSeasonId().map(f -> "seasonId=" + f + ", ").orElse("") +
             optionalDistinct().map(f -> "distinct=" + f + ", ").orElse("") +
         "}";

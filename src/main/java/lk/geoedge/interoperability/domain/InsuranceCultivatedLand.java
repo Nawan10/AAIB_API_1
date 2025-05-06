@@ -1,6 +1,5 @@
 package lk.geoedge.interoperability.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -46,11 +45,10 @@ public class InsuranceCultivatedLand implements Serializable {
     private String addedBy;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    private Farmer farmer;
+    private InsuranceCultivatedLandFarmer farmer;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JsonIgnoreProperties(value = { "season" }, allowSetters = true)
-    private CultivatedLand cultivatedLand;
+    private InsuranceCultivatedLandCultivatedLand cultivatedLand;
 
     @ManyToOne(fetch = FetchType.EAGER)
     private InsuranceCultivatedLandCropType crop;
@@ -174,29 +172,29 @@ public class InsuranceCultivatedLand implements Serializable {
         this.addedBy = addedBy;
     }
 
-    public Farmer getFarmer() {
+    public InsuranceCultivatedLandFarmer getFarmer() {
         return this.farmer;
     }
 
-    public void setFarmer(Farmer farmer) {
-        this.farmer = farmer;
+    public void setFarmer(InsuranceCultivatedLandFarmer insuranceCultivatedLandFarmer) {
+        this.farmer = insuranceCultivatedLandFarmer;
     }
 
-    public InsuranceCultivatedLand farmer(Farmer farmer) {
-        this.setFarmer(farmer);
+    public InsuranceCultivatedLand farmer(InsuranceCultivatedLandFarmer insuranceCultivatedLandFarmer) {
+        this.setFarmer(insuranceCultivatedLandFarmer);
         return this;
     }
 
-    public CultivatedLand getCultivatedLand() {
+    public InsuranceCultivatedLandCultivatedLand getCultivatedLand() {
         return this.cultivatedLand;
     }
 
-    public void setCultivatedLand(CultivatedLand cultivatedLand) {
-        this.cultivatedLand = cultivatedLand;
+    public void setCultivatedLand(InsuranceCultivatedLandCultivatedLand insuranceCultivatedLandCultivatedLand) {
+        this.cultivatedLand = insuranceCultivatedLandCultivatedLand;
     }
 
-    public InsuranceCultivatedLand cultivatedLand(CultivatedLand cultivatedLand) {
-        this.setCultivatedLand(cultivatedLand);
+    public InsuranceCultivatedLand cultivatedLand(InsuranceCultivatedLandCultivatedLand insuranceCultivatedLandCultivatedLand) {
+        this.setCultivatedLand(insuranceCultivatedLandCultivatedLand);
         return this;
     }
 

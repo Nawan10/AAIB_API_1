@@ -1,0 +1,31 @@
+entity InsurancePolicyDamage {
+    percentage Double
+    isFree Integer
+    isPaid Integer
+}
+
+entity InsurancePolicy{
+  name String
+  policyNo String
+  isActivate Integer
+}
+
+entity InsurancePolicyDamageCultivatedLandDamageReason {
+    name String
+    damageCategoryId Integer
+    damageTypeId Integer
+}
+
+
+/**
+ * Many to one relationship.
+ */
+relationship ManyToOne {
+    InsurancePolicyDamage{insurancePolicy} to InsurancePolicy
+    InsurancePolicyDamage{damageReason} to InsurancePolicyDamageCultivatedLandDamageReason
+}
+
+
+service * with serviceClass
+paginate * with pagination
+filter *

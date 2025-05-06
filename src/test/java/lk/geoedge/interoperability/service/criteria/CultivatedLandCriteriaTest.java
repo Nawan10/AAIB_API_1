@@ -82,6 +82,7 @@ class CultivatedLandCriteriaTest {
         cultivatedLandCriteria.tsp();
         cultivatedLandCriteria.createdAt();
         cultivatedLandCriteria.addedBy();
+        cultivatedLandCriteria.farmFieldId();
         cultivatedLandCriteria.seasonId();
         cultivatedLandCriteria.distinct();
     }
@@ -96,6 +97,7 @@ class CultivatedLandCriteriaTest {
                 condition.apply(criteria.getTsp()) &&
                 condition.apply(criteria.getCreatedAt()) &&
                 condition.apply(criteria.getAddedBy()) &&
+                condition.apply(criteria.getFarmFieldId()) &&
                 condition.apply(criteria.getSeasonId()) &&
                 condition.apply(criteria.getDistinct()),
             "every filter matches"
@@ -115,6 +117,7 @@ class CultivatedLandCriteriaTest {
                 condition.apply(criteria.getTsp(), copy.getTsp()) &&
                 condition.apply(criteria.getCreatedAt(), copy.getCreatedAt()) &&
                 condition.apply(criteria.getAddedBy(), copy.getAddedBy()) &&
+                condition.apply(criteria.getFarmFieldId(), copy.getFarmFieldId()) &&
                 condition.apply(criteria.getSeasonId(), copy.getSeasonId()) &&
                 condition.apply(criteria.getDistinct(), copy.getDistinct()),
             "every filter matches"
