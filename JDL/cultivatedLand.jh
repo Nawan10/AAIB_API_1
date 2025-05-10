@@ -1,4 +1,4 @@
-entity CultivatedLand {
+entity CultivatedLandEntity {
   landStatus String
   urea Double
   mop Double
@@ -29,8 +29,8 @@ entity CultivatedLandSeason {
  * Many to one relationship.
  */
 relationship ManyToOne {
-    CultivatedLand {farmField} to CultivatedLandFarmerFieldOwner
-    CultivatedLand {season} to CultivatedLandSeason
+    CultivatedLandEntity {farmField} to CultivatedLandFarmerFieldOwner
+    CultivatedLandEntity {season} to CultivatedLandSeason
 }
 
 service * with serviceClass

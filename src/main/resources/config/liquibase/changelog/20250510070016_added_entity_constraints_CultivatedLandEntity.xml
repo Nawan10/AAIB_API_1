@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity CultivatedLandEntity.
+    -->
+    <changeSet id="20250510070016-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="farm_field_id"
+                                 baseTableName="cultivated_land_entity"
+                                 constraintName="fk_cultivated_land_entity__farm_field_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cultivated_land_farmer_field_owner"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="season_id"
+                                 baseTableName="cultivated_land_entity"
+                                 constraintName="fk_cultivated_land_entity__season_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cultivated_land_season"
+                                 />
+    </changeSet>
+</databaseChangeLog>

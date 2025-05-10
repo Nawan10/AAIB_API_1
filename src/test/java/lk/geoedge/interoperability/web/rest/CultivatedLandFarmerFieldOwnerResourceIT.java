@@ -1123,11 +1123,16 @@ class CultivatedLandFarmerFieldOwnerResourceIT {
         partialUpdatedCultivatedLandFarmerFieldOwner.setId(cultivatedLandFarmerFieldOwner.getId());
 
         partialUpdatedCultivatedLandFarmerFieldOwner
+            .landPlotName(UPDATED_LAND_PLOT_NAME)
+            .landRegistryNo(UPDATED_LAND_REGISTRY_NO)
             .totalLandExtent(UPDATED_TOTAL_LAND_EXTENT)
             .calculatedArea(UPDATED_CALCULATED_AREA)
+            .provinceId(UPDATED_PROVINCE_ID)
+            .districtId(UPDATED_DISTRICT_ID)
             .dsId(UPDATED_DS_ID)
             .gnId(UPDATED_GN_ID)
-            .centerLat(UPDATED_CENTER_LAT);
+            .centerLat(UPDATED_CENTER_LAT)
+            .centerLng(UPDATED_CENTER_LNG);
 
         restCultivatedLandFarmerFieldOwnerMockMvc
             .perform(

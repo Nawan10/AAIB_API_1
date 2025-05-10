@@ -26,8 +26,6 @@ public class DamageTypeCriteria implements Serializable, Criteria {
 
     private StringFilter typeName;
 
-    private LongFilter damageId;
-
     private Boolean distinct;
 
     public DamageTypeCriteria() {}
@@ -35,7 +33,6 @@ public class DamageTypeCriteria implements Serializable, Criteria {
     public DamageTypeCriteria(DamageTypeCriteria other) {
         this.id = other.optionalId().map(LongFilter::copy).orElse(null);
         this.typeName = other.optionalTypeName().map(StringFilter::copy).orElse(null);
-        this.damageId = other.optionalDamageId().map(LongFilter::copy).orElse(null);
         this.distinct = other.distinct;
     }
 
@@ -82,25 +79,6 @@ public class DamageTypeCriteria implements Serializable, Criteria {
         this.typeName = typeName;
     }
 
-    public LongFilter getDamageId() {
-        return damageId;
-    }
-
-    public Optional<LongFilter> optionalDamageId() {
-        return Optional.ofNullable(damageId);
-    }
-
-    public LongFilter damageId() {
-        if (damageId == null) {
-            setDamageId(new LongFilter());
-        }
-        return damageId;
-    }
-
-    public void setDamageId(LongFilter damageId) {
-        this.damageId = damageId;
-    }
-
     public Boolean getDistinct() {
         return distinct;
     }
@@ -129,17 +107,12 @@ public class DamageTypeCriteria implements Serializable, Criteria {
             return false;
         }
         final DamageTypeCriteria that = (DamageTypeCriteria) o;
-        return (
-            Objects.equals(id, that.id) &&
-            Objects.equals(typeName, that.typeName) &&
-            Objects.equals(damageId, that.damageId) &&
-            Objects.equals(distinct, that.distinct)
-        );
+        return Objects.equals(id, that.id) && Objects.equals(typeName, that.typeName) && Objects.equals(distinct, that.distinct);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, typeName, damageId, distinct);
+        return Objects.hash(id, typeName, distinct);
     }
 
     // prettier-ignore
@@ -148,7 +121,6 @@ public class DamageTypeCriteria implements Serializable, Criteria {
         return "DamageTypeCriteria{" +
             optionalId().map(f -> "id=" + f + ", ").orElse("") +
             optionalTypeName().map(f -> "typeName=" + f + ", ").orElse("") +
-            optionalDamageId().map(f -> "damageId=" + f + ", ").orElse("") +
             optionalDistinct().map(f -> "distinct=" + f + ", ").orElse("") +
         "}";
     }

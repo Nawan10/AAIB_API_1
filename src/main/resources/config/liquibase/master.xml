@@ -76,6 +76,11 @@
     <include file="config/liquibase/changelog/20250505140204_added_entity_IndexPolicyCropType.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20250505140205_added_entity_IndexPolicyWeatherStation.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20250505140841_added_entity_Mahaweli.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250509141710_added_entity_DamagesAll.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250509141711_added_entity_DamagesCategory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250509141712_added_entity_DamagesType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250509165201_added_entity_DamageEntity.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250510070016_added_entity_CultivatedLandEntity.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20250502173958_added_entity_constraints_InsuranceCultivatedLand.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20250502174000_added_entity_constraints_CultivatedLand.xml" relativeToChangelogFile="false"/>
@@ -98,6 +103,9 @@
     <include file="config/liquibase/changelog/20250505134039_added_entity_constraints_CultivatedLandFarmers.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20250505134807_added_entity_constraints_CropVariety.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20250505140200_added_entity_constraints_IndexPolicy.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250509141710_added_entity_constraints_DamagesAll.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250509165201_added_entity_constraints_DamageEntity.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250510070016_added_entity_constraints_CultivatedLandEntity.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

@@ -372,8 +372,6 @@ class DamageTypeResourceIT {
         DamageType partialUpdatedDamageType = new DamageType();
         partialUpdatedDamageType.setId(damageType.getId());
 
-        partialUpdatedDamageType.typeName(UPDATED_TYPE_NAME);
-
         restDamageTypeMockMvc
             .perform(
                 patch(ENTITY_API_URL_ID, partialUpdatedDamageType.getId())

@@ -1,17 +1,16 @@
 package lk.geoedge.interoperability.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
- * A Damage.
+ * A DamageEntity.
  */
 @Entity
 @Table(name = "damage")
 @SuppressWarnings("common-java:DuplicatedBlocks")
-public class Damage implements Serializable {
+public class DamageEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -42,12 +41,10 @@ public class Damage implements Serializable {
     @Column(name = "added_by")
     private String addedBy;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JsonIgnoreProperties(value = { "damages" }, allowSetters = true)
+    @ManyToOne(fetch = FetchType.EAGER)
     private DamageCategory damageCategory;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JsonIgnoreProperties(value = { "damages" }, allowSetters = true)
+    @ManyToOne(fetch = FetchType.EAGER)
     private DamageType damageType;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
@@ -56,7 +53,7 @@ public class Damage implements Serializable {
         return this.id;
     }
 
-    public Damage id(Long id) {
+    public DamageEntity id(Long id) {
         this.setId(id);
         return this;
     }
@@ -69,7 +66,7 @@ public class Damage implements Serializable {
         return this.damageName;
     }
 
-    public Damage damageName(String damageName) {
+    public DamageEntity damageName(String damageName) {
         this.setDamageName(damageName);
         return this;
     }
@@ -82,7 +79,7 @@ public class Damage implements Serializable {
         return this.damageCode;
     }
 
-    public Damage damageCode(String damageCode) {
+    public DamageEntity damageCode(String damageCode) {
         this.setDamageCode(damageCode);
         return this;
     }
@@ -95,7 +92,7 @@ public class Damage implements Serializable {
         return this.damageFamily;
     }
 
-    public Damage damageFamily(String damageFamily) {
+    public DamageEntity damageFamily(String damageFamily) {
         this.setDamageFamily(damageFamily);
         return this;
     }
@@ -108,7 +105,7 @@ public class Damage implements Serializable {
         return this.damageGenus;
     }
 
-    public Damage damageGenus(String damageGenus) {
+    public DamageEntity damageGenus(String damageGenus) {
         this.setDamageGenus(damageGenus);
         return this;
     }
@@ -121,7 +118,7 @@ public class Damage implements Serializable {
         return this.damageSpecies;
     }
 
-    public Damage damageSpecies(String damageSpecies) {
+    public DamageEntity damageSpecies(String damageSpecies) {
         this.setDamageSpecies(damageSpecies);
         return this;
     }
@@ -134,7 +131,7 @@ public class Damage implements Serializable {
         return this.createdAt;
     }
 
-    public Damage createdAt(LocalDate createdAt) {
+    public DamageEntity createdAt(LocalDate createdAt) {
         this.setCreatedAt(createdAt);
         return this;
     }
@@ -147,7 +144,7 @@ public class Damage implements Serializable {
         return this.addedBy;
     }
 
-    public Damage addedBy(String addedBy) {
+    public DamageEntity addedBy(String addedBy) {
         this.setAddedBy(addedBy);
         return this;
     }
@@ -164,7 +161,7 @@ public class Damage implements Serializable {
         this.damageCategory = damageCategory;
     }
 
-    public Damage damageCategory(DamageCategory damageCategory) {
+    public DamageEntity damageCategory(DamageCategory damageCategory) {
         this.setDamageCategory(damageCategory);
         return this;
     }
@@ -177,7 +174,7 @@ public class Damage implements Serializable {
         this.damageType = damageType;
     }
 
-    public Damage damageType(DamageType damageType) {
+    public DamageEntity damageType(DamageType damageType) {
         this.setDamageType(damageType);
         return this;
     }
@@ -189,10 +186,10 @@ public class Damage implements Serializable {
         if (this == o) {
             return true;
         }
-        if (!(o instanceof Damage)) {
+        if (!(o instanceof DamageEntity)) {
             return false;
         }
-        return getId() != null && getId().equals(((Damage) o).getId());
+        return getId() != null && getId().equals(((DamageEntity) o).getId());
     }
 
     @Override
@@ -204,7 +201,7 @@ public class Damage implements Serializable {
     // prettier-ignore
     @Override
     public String toString() {
-        return "Damage{" +
+        return "DamageEntity{" +
             "id=" + getId() +
             ", damageName='" + getDamageName() + "'" +
             ", damageCode='" + getDamageCode() + "'" +

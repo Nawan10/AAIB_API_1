@@ -1,4 +1,4 @@
-entity Damage {
+entity DamageEntity {
     damageName String
     damageCode String
     damageFamily String
@@ -17,13 +17,12 @@ entity DamageType{
 }
 
 /**
- * One to many relationship.
+ * Many to one relationship.
  */
-relationship OneToMany {
-    DamageCategory{damage} to Damage
-    DamageType{damage} to Damage
+relationship ManyToOne {
+  DamageEntity{damageCategory} to DamageCategory
+  DamageEntity{damageType} to DamageType
 }
-
 service * with serviceClass
 paginate * with pagination
 filter *

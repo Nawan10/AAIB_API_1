@@ -26,8 +26,6 @@ public class DamageCategoryCriteria implements Serializable, Criteria {
 
     private StringFilter categoryName;
 
-    private LongFilter damageId;
-
     private Boolean distinct;
 
     public DamageCategoryCriteria() {}
@@ -35,7 +33,6 @@ public class DamageCategoryCriteria implements Serializable, Criteria {
     public DamageCategoryCriteria(DamageCategoryCriteria other) {
         this.id = other.optionalId().map(LongFilter::copy).orElse(null);
         this.categoryName = other.optionalCategoryName().map(StringFilter::copy).orElse(null);
-        this.damageId = other.optionalDamageId().map(LongFilter::copy).orElse(null);
         this.distinct = other.distinct;
     }
 
@@ -82,25 +79,6 @@ public class DamageCategoryCriteria implements Serializable, Criteria {
         this.categoryName = categoryName;
     }
 
-    public LongFilter getDamageId() {
-        return damageId;
-    }
-
-    public Optional<LongFilter> optionalDamageId() {
-        return Optional.ofNullable(damageId);
-    }
-
-    public LongFilter damageId() {
-        if (damageId == null) {
-            setDamageId(new LongFilter());
-        }
-        return damageId;
-    }
-
-    public void setDamageId(LongFilter damageId) {
-        this.damageId = damageId;
-    }
-
     public Boolean getDistinct() {
         return distinct;
     }
@@ -129,17 +107,12 @@ public class DamageCategoryCriteria implements Serializable, Criteria {
             return false;
         }
         final DamageCategoryCriteria that = (DamageCategoryCriteria) o;
-        return (
-            Objects.equals(id, that.id) &&
-            Objects.equals(categoryName, that.categoryName) &&
-            Objects.equals(damageId, that.damageId) &&
-            Objects.equals(distinct, that.distinct)
-        );
+        return Objects.equals(id, that.id) && Objects.equals(categoryName, that.categoryName) && Objects.equals(distinct, that.distinct);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, categoryName, damageId, distinct);
+        return Objects.hash(id, categoryName, distinct);
     }
 
     // prettier-ignore
@@ -148,7 +121,6 @@ public class DamageCategoryCriteria implements Serializable, Criteria {
         return "DamageCategoryCriteria{" +
             optionalId().map(f -> "id=" + f + ", ").orElse("") +
             optionalCategoryName().map(f -> "categoryName=" + f + ", ").orElse("") +
-            optionalDamageId().map(f -> "damageId=" + f + ", ").orElse("") +
             optionalDistinct().map(f -> "distinct=" + f + ", ").orElse("") +
         "}";
     }

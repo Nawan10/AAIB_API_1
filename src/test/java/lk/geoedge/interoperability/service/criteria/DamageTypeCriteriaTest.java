@@ -77,17 +77,13 @@ class DamageTypeCriteriaTest {
     private static void setAllFilters(DamageTypeCriteria damageTypeCriteria) {
         damageTypeCriteria.id();
         damageTypeCriteria.typeName();
-        damageTypeCriteria.damageId();
         damageTypeCriteria.distinct();
     }
 
     private static Condition<DamageTypeCriteria> criteriaFiltersAre(Function<Object, Boolean> condition) {
         return new Condition<>(
             criteria ->
-                condition.apply(criteria.getId()) &&
-                condition.apply(criteria.getTypeName()) &&
-                condition.apply(criteria.getDamageId()) &&
-                condition.apply(criteria.getDistinct()),
+                condition.apply(criteria.getId()) && condition.apply(criteria.getTypeName()) && condition.apply(criteria.getDistinct()),
             "every filter matches"
         );
     }
@@ -97,7 +93,6 @@ class DamageTypeCriteriaTest {
             criteria ->
                 condition.apply(criteria.getId(), copy.getId()) &&
                 condition.apply(criteria.getTypeName(), copy.getTypeName()) &&
-                condition.apply(criteria.getDamageId(), copy.getDamageId()) &&
                 condition.apply(criteria.getDistinct(), copy.getDistinct()),
             "every filter matches"
         );

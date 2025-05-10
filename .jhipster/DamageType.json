@@ -15,14 +15,7 @@
   "microserviceName": "aaibapi1",
   "name": "DamageType",
   "pagination": "pagination",
-  "relationships": [
-    {
-      "otherEntityName": "damage",
-      "relationshipName": "damage",
-      "relationshipSide": "left",
-      "relationshipType": "one-to-many"
-    }
-  ],
+  "relationships": [],
   "searchEngine": "no",
   "service": "serviceClass"
 }

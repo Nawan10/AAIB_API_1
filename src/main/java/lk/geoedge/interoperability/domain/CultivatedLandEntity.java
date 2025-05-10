@@ -5,12 +5,12 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
- * A CultivatedLand.
+ * A CultivatedLandEntity.
  */
 @Entity
 @Table(name = "cultivated_land")
 @SuppressWarnings("common-java:DuplicatedBlocks")
-public class CultivatedLand implements Serializable {
+public class CultivatedLandEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -50,7 +50,7 @@ public class CultivatedLand implements Serializable {
         return this.id;
     }
 
-    public CultivatedLand id(Long id) {
+    public CultivatedLandEntity id(Long id) {
         this.setId(id);
         return this;
     }
@@ -63,7 +63,7 @@ public class CultivatedLand implements Serializable {
         return this.landStatus;
     }
 
-    public CultivatedLand landStatus(String landStatus) {
+    public CultivatedLandEntity landStatus(String landStatus) {
         this.setLandStatus(landStatus);
         return this;
     }
@@ -76,7 +76,7 @@ public class CultivatedLand implements Serializable {
         return this.urea;
     }
 
-    public CultivatedLand urea(Double urea) {
+    public CultivatedLandEntity urea(Double urea) {
         this.setUrea(urea);
         return this;
     }
@@ -89,7 +89,7 @@ public class CultivatedLand implements Serializable {
         return this.mop;
     }
 
-    public CultivatedLand mop(Double mop) {
+    public CultivatedLandEntity mop(Double mop) {
         this.setMop(mop);
         return this;
     }
@@ -102,7 +102,7 @@ public class CultivatedLand implements Serializable {
         return this.tsp;
     }
 
-    public CultivatedLand tsp(Double tsp) {
+    public CultivatedLandEntity tsp(Double tsp) {
         this.setTsp(tsp);
         return this;
     }
@@ -115,7 +115,7 @@ public class CultivatedLand implements Serializable {
         return this.createdAt;
     }
 
-    public CultivatedLand createdAt(LocalDate createdAt) {
+    public CultivatedLandEntity createdAt(LocalDate createdAt) {
         this.setCreatedAt(createdAt);
         return this;
     }
@@ -128,7 +128,7 @@ public class CultivatedLand implements Serializable {
         return this.addedBy;
     }
 
-    public CultivatedLand addedBy(String addedBy) {
+    public CultivatedLandEntity addedBy(String addedBy) {
         this.setAddedBy(addedBy);
         return this;
     }
@@ -145,7 +145,7 @@ public class CultivatedLand implements Serializable {
         this.farmField = cultivatedLandFarmerFieldOwner;
     }
 
-    public CultivatedLand farmField(CultivatedLandFarmerFieldOwner cultivatedLandFarmerFieldOwner) {
+    public CultivatedLandEntity farmField(CultivatedLandFarmerFieldOwner cultivatedLandFarmerFieldOwner) {
         this.setFarmField(cultivatedLandFarmerFieldOwner);
         return this;
     }
@@ -158,7 +158,7 @@ public class CultivatedLand implements Serializable {
         this.season = cultivatedLandSeason;
     }
 
-    public CultivatedLand season(CultivatedLandSeason cultivatedLandSeason) {
+    public CultivatedLandEntity season(CultivatedLandSeason cultivatedLandSeason) {
         this.setSeason(cultivatedLandSeason);
         return this;
     }
@@ -170,10 +170,10 @@ public class CultivatedLand implements Serializable {
         if (this == o) {
             return true;
         }
-        if (!(o instanceof CultivatedLand)) {
+        if (!(o instanceof CultivatedLandEntity)) {
             return false;
         }
-        return getId() != null && getId().equals(((CultivatedLand) o).getId());
+        return getId() != null && getId().equals(((CultivatedLandEntity) o).getId());
     }
 
     @Override
@@ -185,7 +185,7 @@ public class CultivatedLand implements Serializable {
     // prettier-ignore
     @Override
     public String toString() {
-        return "CultivatedLand{" +
+        return "CultivatedLandEntity{" +
             "id=" + getId() +
             ", landStatus='" + getLandStatus() + "'" +
             ", urea=" + getUrea() +

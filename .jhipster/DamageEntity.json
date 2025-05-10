@@ -1,26 +1,30 @@
 {
   "annotations": {
-    "changelogDate": "20250502174000"
+    "changelogDate": "20250509165201"
   },
   "applications": "*",
   "clientRootFolder": "aaibapi1",
   "databaseType": "sql",
   "fields": [
     {
-      "fieldName": "landStatus",
+      "fieldName": "damageName",
       "fieldType": "String"
     },
     {
-      "fieldName": "urea",
-      "fieldType": "Double"
+      "fieldName": "damageCode",
+      "fieldType": "String"
     },
     {
-      "fieldName": "mop",
-      "fieldType": "Double"
+      "fieldName": "damageFamily",
+      "fieldType": "String"
     },
     {
-      "fieldName": "tsp",
-      "fieldType": "Double"
+      "fieldName": "damageGenus",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "damageSpecies",
+      "fieldType": "String"
     },
     {
       "fieldName": "createdAt",
@@ -33,18 +37,18 @@
   ],
   "jpaMetamodelFiltering": true,
   "microserviceName": "aaibapi1",
-  "name": "CultivatedLand",
+  "name": "DamageEntity",
   "pagination": "pagination",
   "relationships": [
     {
-      "otherEntityName": "cultivatedLandFarmerFieldOwner",
-      "relationshipName": "farmField",
+      "otherEntityName": "damageCategory",
+      "relationshipName": "damageCategory",
       "relationshipSide": "left",
       "relationshipType": "many-to-one"
     },
     {
-      "otherEntityName": "cultivatedLandSeason",
-      "relationshipName": "season",
+      "otherEntityName": "damageType",
+      "relationshipName": "damageType",
       "relationshipSide": "left",
       "relationshipType": "many-to-one"
     }

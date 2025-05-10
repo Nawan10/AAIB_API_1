@@ -443,7 +443,7 @@ class CultivatedLandSeasonResourceIT {
         CultivatedLandSeason partialUpdatedCultivatedLandSeason = new CultivatedLandSeason();
         partialUpdatedCultivatedLandSeason.setId(cultivatedLandSeason.getId());
 
-        partialUpdatedCultivatedLandSeason.name(UPDATED_NAME).period(UPDATED_PERIOD);
+        partialUpdatedCultivatedLandSeason.name(UPDATED_NAME);
 
         restCultivatedLandSeasonMockMvc
             .perform(

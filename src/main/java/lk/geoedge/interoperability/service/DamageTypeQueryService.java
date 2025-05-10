@@ -1,6 +1,5 @@
 package lk.geoedge.interoperability.service;
 
-import jakarta.persistence.criteria.JoinType;
 import lk.geoedge.interoperability.domain.*; // for static metamodels
 import lk.geoedge.interoperability.domain.DamageType;
 import lk.geoedge.interoperability.repository.DamageTypeRepository;
@@ -69,8 +68,7 @@ public class DamageTypeQueryService extends QueryService<DamageType> {
             specification = Specification.allOf(
                 Boolean.TRUE.equals(criteria.getDistinct()) ? distinct(criteria.getDistinct()) : null,
                 buildRangeSpecification(criteria.getId(), DamageType_.id),
-                buildStringSpecification(criteria.getTypeName(), DamageType_.typeName),
-                buildSpecification(criteria.getDamageId(), root -> root.join(DamageType_.damages, JoinType.LEFT).get(Damage_.id))
+                buildStringSpecification(criteria.getTypeName(), DamageType_.typeName)
             );
         }
         return specification;
